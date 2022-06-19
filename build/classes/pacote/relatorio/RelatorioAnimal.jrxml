@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c41e94d0-1856-47fa-9d1d-06ef6a083a30">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="19"/>
+	<queryString>
+		<![CDATA[SELECT
+     animal."nomeanimal" AS animal_nomeanimal,
+     animal."numerocadastro" AS animal_numerocadastro,
+     animal."apelido" AS animal_apelido,
+     animal."especie" AS animal_especie,
+     animal."raca" AS animal_raca,
+     animal."informacoes" AS animal_informacoes,
+     animal."data_nascimento" AS animal_data_nascimento,
+     animal."sexo" AS animal_sexo,
+     animal."porte" AS animal_porte,
+     animal."cor" AS animal_cor,
+     animal."peso" AS animal_peso
+FROM
+     "public"."animal" animal]]>
+	</queryString>
+	<field name="animal_nomeanimal" class="java.lang.String"/>
+	<field name="animal_numerocadastro" class="java.lang.String"/>
+	<field name="animal_apelido" class="java.lang.String"/>
+	<field name="animal_especie" class="java.lang.String"/>
+	<field name="animal_raca" class="java.lang.String"/>
+	<field name="animal_informacoes" class="java.lang.String"/>
+	<field name="animal_data_nascimento" class="java.sql.Date"/>
+	<field name="animal_sexo" class="java.lang.String"/>
+	<field name="animal_porte" class="java.lang.String"/>
+	<field name="animal_cor" class="java.lang.String"/>
+	<field name="animal_peso" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="11" width="301" height="49" forecolor="#9999FF" uuid="c4084bea-efa3-413b-9b83-f49f5ed9c980"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="28" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatorio Animal]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="117" height="79" uuid="258663eb-0e20-4429-818f-a19c56b0f7ed"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Trabalhos\\Trabalho -3\\TrabalhoPOE3\\src\\imagem\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="405" y="6" width="126" height="20" uuid="27b06e27-dda6-4e51-9256-b49e528501ad"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="35" width="68" height="20" uuid="78203b59-03b6-4a71-a2f1-bedf82720de5"/>
+				<text><![CDATA[Especie:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="35" width="43" height="20" uuid="66951eae-26a6-40c6-8f70-bda0644d6a55"/>
+				<text><![CDATA[Raça:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="35" width="45" height="20" uuid="d8c0f4a3-a770-415c-8dee-83b7e6eb0523"/>
+				<text><![CDATA[Numero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="35" width="105" height="20" uuid="6062305b-4998-4d34-8483-28eab74d0492"/>
+				<text><![CDATA[Data de nascimento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="35" width="54" height="20" uuid="ae83b1f2-3a49-4e73-8cba-bff66179ffdc"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="35" width="33" height="20" uuid="b84f0282-3da0-49cd-9543-6f98a152d98d"/>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="35" width="50" height="20" uuid="020bc3e2-3bf5-44d9-958c-87dae0990005"/>
+				<text><![CDATA[Porte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="35" width="35" height="20" uuid="5942d1c9-1f89-4723-bdab-d29b2c3a288c"/>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="5" width="54" height="20" uuid="bb054173-f7e9-409e-ab9e-855b188b2e5f"/>
+				<textFieldExpression><![CDATA[$F{animal_nomeanimal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="5" width="45" height="20" uuid="ff77da90-0666-4af9-b05b-16bfe9620f8a"/>
+				<textFieldExpression><![CDATA[$F{animal_numerocadastro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="5" width="68" height="20" uuid="2b9971c0-c7a2-473f-a464-5c63cfa321c4"/>
+				<textFieldExpression><![CDATA[$F{animal_especie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="5" width="43" height="20" uuid="a8ff86dc-32b9-4124-9bf7-4a91eaac3e58"/>
+				<textFieldExpression><![CDATA[$F{animal_raca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="5" width="54" height="20" uuid="34847920-9fdf-435d-ae8d-4cd2de023f0a"/>
+				<textFieldExpression><![CDATA[$F{animal_data_nascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="5" width="33" height="20" uuid="8972a56c-fbd3-4a7a-9217-546cef0a2875"/>
+				<textFieldExpression><![CDATA[$F{animal_sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="5" width="43" height="20" uuid="db904ccf-0ca2-4108-8872-68e403557b48"/>
+				<textFieldExpression><![CDATA[$F{animal_porte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="5" width="35" height="20" uuid="429de4cc-965f-43d6-94b2-0afde1cc897a"/>
+				<textFieldExpression><![CDATA[$F{animal_peso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="498" y="28" width="40" height="20" uuid="37311ef5-2abc-43b9-a0c0-aefd436e88a0"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="28" width="80" height="20" uuid="1281ff2f-13a0-476e-bf49-988940f0c21d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

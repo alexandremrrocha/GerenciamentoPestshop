@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="424ef391-4804-4b1a-be58-e9f0b006c553">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     produto."nomeproduto" AS produto_nomeproduto,
+     produto."codigoproduto" AS produto_codigoproduto,
+     produto."fornecedor" AS produto_fornecedor,
+     produto."marca" AS produto_marca,
+     produto."valorcusto" AS produto_valorcusto,
+     produto."valorvenda" AS produto_valorvenda,
+     produto."quantidade" AS produto_quantidade,
+     produto."datavencimento" AS produto_datavencimento
+FROM
+     "public"."produto" produto]]>
+	</queryString>
+	<field name="produto_nomeproduto" class="java.lang.String"/>
+	<field name="produto_codigoproduto" class="java.lang.String"/>
+	<field name="produto_fornecedor" class="java.lang.String"/>
+	<field name="produto_marca" class="java.lang.String"/>
+	<field name="produto_valorcusto" class="java.lang.String"/>
+	<field name="produto_valorvenda" class="java.lang.String"/>
+	<field name="produto_quantidade" class="java.lang.String"/>
+	<field name="produto_datavencimento" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="11" width="301" height="49" forecolor="#9999FF" uuid="c08bed1e-9d5d-46c0-977d-51cc38da9e98"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="28" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatorio Produto]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="117" height="79" uuid="088189a0-b141-49dd-a073-3f4b21aa6108"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Trabalhos\\Trabalho -3\\TrabalhoPOE3\\src\\imagem\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="405" y="4" width="126" height="20" uuid="5fccff16-fd62-46fb-87aa-9ff4fe94d00b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="36" width="56" height="20" uuid="90fd183d-14e1-4c56-bef5-cd434d97dc29"/>
+				<text><![CDATA[Marca:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="36" width="83" height="20" uuid="4fbb20b8-1ee5-415b-b9b2-cf3b09870ec5"/>
+				<text><![CDATA[Valor de Custo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="36" width="58" height="20" uuid="07bea956-bf0d-43db-ba31-4071709ddc2c"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="36" width="52" height="20" uuid="d1ae355b-a37a-4122-bb52-e6b654ddfb57"/>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="36" width="70" height="20" uuid="b1d077f3-bacc-4b50-bfa6-fd421ee6433b"/>
+				<text><![CDATA[Quantidade:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="36" width="110" height="20" uuid="206f99d9-8d45-44c3-b5c8-f77e68fba9e6"/>
+				<text><![CDATA[Data de vencimento:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="4" width="58" height="20" uuid="b5d5cfaf-17f8-493f-9293-cb15623b94f7"/>
+				<textFieldExpression><![CDATA[$F{produto_nomeproduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="4" width="52" height="20" uuid="197c4306-dbcf-49df-9b9c-67f964b62349"/>
+				<textFieldExpression><![CDATA[$F{produto_codigoproduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="4" width="56" height="20" uuid="d82929f9-8fda-42d0-94a2-a8f73d57434b"/>
+				<textFieldExpression><![CDATA[$F{produto_marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="4" width="83" height="20" uuid="aaf40f2d-6f1c-47ec-bdda-c6f73c70dd92"/>
+				<textFieldExpression><![CDATA[$F{produto_valorcusto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="4" width="70" height="20" uuid="452b852e-c60e-497b-9d90-294713bfb7dd"/>
+				<textFieldExpression><![CDATA[$F{produto_quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="4" width="49" height="20" uuid="23fd3c54-2509-44d4-919f-c8df926f0c97"/>
+				<textFieldExpression><![CDATA[$F{produto_datavencimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="494" y="23" width="40" height="20" uuid="7917cb4c-0b3c-4cc9-af54-abbedf114812"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="23" width="80" height="20" uuid="db4a5491-c114-4656-bbdf-a5e436d5b55e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

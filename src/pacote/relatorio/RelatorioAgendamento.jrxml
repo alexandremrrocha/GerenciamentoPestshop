@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11f039d5-312a-462f-be38-550b329d65ba">
+	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     agendamento."nomecliente" AS agendamento_nomecliente,
+     agendamento."numeroagendamento" AS agendamento_numeroagendamento,
+     agendamento."nomeanimal" AS agendamento_nomeanimal,
+     agendamento."tiposervico" AS agendamento_tiposervico,
+     agendamento."valortotal" AS agendamento_valortotal,
+     agendamento."data_atendimento" AS agendamento_data_atendimento,
+     agendamento."horario_atendimento" AS agendamento_horario_atendimento,
+     agendamento."nomeresponsavel" AS agendamento_nomeresponsavel
+FROM
+     "public"."agendamento" agendamento]]>
+	</queryString>
+	<field name="agendamento_nomecliente" class="java.lang.String"/>
+	<field name="agendamento_numeroagendamento" class="java.lang.String"/>
+	<field name="agendamento_nomeanimal" class="java.lang.String"/>
+	<field name="agendamento_tiposervico" class="java.lang.String"/>
+	<field name="agendamento_valortotal" class="java.lang.String"/>
+	<field name="agendamento_data_atendimento" class="java.sql.Date"/>
+	<field name="agendamento_horario_atendimento" class="java.lang.String"/>
+	<field name="agendamento_nomeresponsavel" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="13" width="301" height="49" forecolor="#9999FF" uuid="7ede4dd8-995a-4e79-92d2-9b0fb8ea4068"/>
+				<textElement>
+					<font fontName="Times New Roman" size="28" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatorio Agendamento]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="0" width="116" height="79" uuid="e09b2834-be63-4ae5-a876-cde9f4760289"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Trabalhos\\Trabalho -3\\TrabalhoPOE3\\src\\imagem\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="406" y="8" width="126" height="20" uuid="b00c3c2c-1c62-45ab-818a-d72a3af35fa6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="31" width="96" height="20" uuid="8783d7af-43cf-4f2c-b2dd-cf5d27e82ae4"/>
+				<text><![CDATA[Nome do Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="31" width="45" height="20" uuid="a2259cfe-3327-4d43-aa0f-9f266175fce8"/>
+				<text><![CDATA[Numero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="31" width="86" height="20" uuid="4afdb0a4-7b51-450d-87bc-2b620c70caad"/>
+				<text><![CDATA[Tipo do Serviço:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="31" width="62" height="20" uuid="da68cff4-18f8-49bf-968e-e273a46bf294"/>
+				<text><![CDATA[Valor Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="31" width="52" height="20" uuid="a9f314a9-98c0-4fe0-b5d3-0f7f2ad18834"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="31" width="47" height="20" uuid="c9a70a92-b91e-4e43-baad-22f0ce6ecd6d"/>
+				<text><![CDATA[Horario:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="4" width="96" height="20" uuid="75ddc832-59b7-4704-9f71-56a862f756e3"/>
+				<textFieldExpression><![CDATA[$F{agendamento_nomecliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="4" width="45" height="20" uuid="38bbbdbe-a98b-4688-85b7-44364f790048"/>
+				<textFieldExpression><![CDATA[$F{agendamento_numeroagendamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="4" width="86" height="20" uuid="c58c2f14-8b42-4380-a267-1f72a250bad0"/>
+				<textFieldExpression><![CDATA[$F{agendamento_tiposervico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="4" width="62" height="20" uuid="8dd88901-0135-45eb-ba57-af6fc0b76a07"/>
+				<textFieldExpression><![CDATA[$F{agendamento_valortotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="4" width="52" height="20" uuid="090080df-d938-497b-8d60-0b1576bf6784"/>
+				<textFieldExpression><![CDATA[$F{agendamento_data_atendimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="4" width="47" height="20" uuid="9d116b5b-1ff7-48d5-90af-14f50367bad6"/>
+				<textFieldExpression><![CDATA[$F{agendamento_horario_atendimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="423" y="30" width="80" height="20" uuid="d845d93b-062e-41ce-9e6a-17f0ff5c2938"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="503" y="30" width="40" height="20" uuid="32536c35-aa6c-428d-94d4-078bf003b6c8"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
